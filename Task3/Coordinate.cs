@@ -1,3 +1,8 @@
 namespace Task3;
 
-public record Coordinate();
+/// <summary>
+/// Представляет координаты точки на плоскости.
+/// </summary>
+/// <param name="X">Координата X</param>
+/// <param name="Y">Координата Y</param>
+public record Coordinate(int X, int Y);
