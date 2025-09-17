@@ -1,0 +1,8 @@
+DELETE FROM Users
+WHERE IsActive = 0
+  AND LastLoginDate < DATEADD(YEAR, -2, GETDATE())
+  AND UserID NOT IN (
+    SELECT DISTINCT UserID FROM Reviews
+    UNION
+    SELECT DISTINCT UserID FROM WatchList
+);
